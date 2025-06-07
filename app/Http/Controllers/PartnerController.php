@@ -12,23 +12,23 @@ class PartnerController extends Controller
     {
         $partners = Partner
             ::with('type')
-            ->withSum('sales as salesQuantity', 'quantity')
+//            ->withSum('sales as salesQuantity', 'quantity')
             ->get();
 
-        foreach ($partners as $partner) {
-            $discount = 0;
-
-            if ($partner->salesQuantity > 300_000)
-                $discount = 15;
-            else
-            if ($partner->salesQuantity > 50_000)
-                $discount = 10;
-            else
-            if ($partner->salesQuantity > 10_000)
-                $discount = 5;
-
-            $partner['discount'] = $discount;
-        }
+//        foreach ($partners as $partner) {
+//            $discount = 0;
+//
+//            if ($partner->salesQuantity > 300_000)
+//                $discount = 15;
+//            else
+//            if ($partner->salesQuantity > 50_000)
+//                $discount = 10;
+//            else
+//            if ($partner->salesQuantity > 10_000)
+//                $discount = 5;
+//
+//            $partner['discount'] = $discount;
+//        }
 
         return view('partners.index', compact('partners'));
     }
