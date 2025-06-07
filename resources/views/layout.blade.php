@@ -21,7 +21,6 @@
         <h1>{{ config('app.name') }}</h1>
     </a>
     <nav class="flex gap6">
-        <a class="btn" href="{{ route('products.index') }}">Продукты</a>
         <a class="btn" href="{{ route('partners.index') }}">Партнёры</a>
     </nav>
 </header>
