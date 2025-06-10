@@ -9,6 +9,7 @@ use App\Models\ProductMaterial;
 use App\Models\ProductType;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -17,6 +18,13 @@ class ProductController extends Controller
     {
         $products = Product
             ::with('type')
+            ->addSelect([
+                // Подзапрос на расчёт себестоимости по используемым материалам на каждом продукте
+                'cost' => DB::table((new ProductMaterial)->getTable(), 'pm')
+                    ->join((new Material)->getTable().' as m', 'm.id', '=', 'pm.material_id')
+                    ->selectRaw('SUM(pm.quantity * m.price)')
+                    ->whereColumn('pm.product_id', (new Product)->getTable().'.id')
+            ])
             ->get();
 
         return view('products.index', compact('products'));
