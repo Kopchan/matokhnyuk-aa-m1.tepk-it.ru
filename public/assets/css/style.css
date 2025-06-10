@@ -1,19 +1,27 @@
+/* Подключение шрифта */
 @font-face {
-    font-family: 'Segoe UI';
-    src: url('../fonts/Candara.ttf');
+    font-family: 'Gabriola';
+    src: url('../fonts/Gabriola.ttf');
 }
+
+/* Установка размера шрифта и переменные цветов для стилей */
 :root {
-    font-family: 'Candara', sans-serif;
-    --accent:          #67BA80;
-    --accent-tint1:    #518763;
-    --accent-tint2:    #395945;
+    font-size: 24px;
+    line-height: 26px;
+    --accent:          #2D6033;
+    --accent-tint1:    #214725;
+    --accent-tint2:    #35653b;
     --bg-primar:       #FFFFFF;
     --bg-main:         #f1f1f1;
-    --bg-second:       #F4E8D3;
-    --bg-second-tint1: #d5cbbc;
-    --bg-second-tint2: #b6ada0;
+    --bg-second:       #BBD9B2;
+    --bg-second-tint1: #c6dfc2;
+    --bg-second-tint2: #acc8a4;
+    accent-color: var(--accent);
 }
+
+/* Установка шрифта и отключение стандартных отступов */
 * {
+    font-family: 'Gabriola', sans-serif;
     padding: 0;
     margin: 0;
 }
