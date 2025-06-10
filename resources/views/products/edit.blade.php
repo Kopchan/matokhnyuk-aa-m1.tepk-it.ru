@@ -11,12 +11,12 @@
         @method('PATCH') {{-- Формами не поддерживается метод PATCH, поэтому передаём в виде скрытого поля --}}
 
         {{-- Поля формы с привязкой (object) к текущему открытому продукту (product) для отображения старых данных --}}
-        <x-form.input  :object="$product" name="name"            label="Название"/>
-        <x-form.select :object="$product" name="product_type_id" label="Тип" :options="$types"/>
-        <x-form.input  :object="$product" name="article"         label="Артикул"/>
-        <x-form.input  :object="$product" name="minPrice"        label="Минимальная стоимость для партнёра (р)"
+        <x-form.input  required :object="$product" name="name"            label="Название"/>
+        <x-form.select required :object="$product" name="product_type_id" label="Тип" :options="$types"/>
+        <x-form.input  required :object="$product" name="article"         label="Артикул"/>
+        <x-form.input  required :object="$product" name="minPrice"        label="Минимальная стоимость для партнёра (р)"
                        type="number" min="0" step="0.01"/>
-        <x-form.input  :object="$product" name="width"           label="Ширина рулона (м)"
+        <x-form.input  required :object="$product" name="width"           label="Ширина рулона (м)"
                        type="number" min="0" step="0.01"/>
 
         {{-- Кнопка отправки формы --}}

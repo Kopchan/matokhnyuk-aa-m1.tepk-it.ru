@@ -10,12 +10,12 @@
         @csrf {{-- Cкрытое поле для потдверждения что форма была с нашей страницы --}}
 
         {{-- Поля формы --}}
-        <x-form.input  name="name"            label="Название"/>
-        <x-form.select name="product_type_id" label="Тип" :options="$types"/>
-        <x-form.input  name="article"         label="Артикул"/>
-        <x-form.input  name="minPrice"        label="Минимальная стоимость для партнёра (р)"
+        <x-form.input  required name="name"            label="Название"/>
+        <x-form.select required name="product_type_id" label="Тип" :options="$types"/>
+        <x-form.input  required name="article"         label="Артикул"/>
+        <x-form.input  required name="minPrice"        label="Минимальная стоимость для партнёра (р)"
                        type="number" min="0" step="0.01" default="0"/>
-        <x-form.input  name="width"           label="Ширина рулона (м)"
+        <x-form.input  required name="width"           label="Ширина рулона (м)"
                        type="number" min="0" step="0.01" default="0"/>
 
         {{-- Кнопка отправки формы --}}
