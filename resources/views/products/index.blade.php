@@ -1,6 +1,6 @@
 {{-- Представление для отображения списка продукции --}}
 @extends('layout')
-@section('title', 'Продукты')
+@section('title', "Продукты ({$products?->count()})")
 @section('back', route('home'))
 @section('buttons')
     <a class="btn" href="{{ route('products.create') }}">Создать</a>
