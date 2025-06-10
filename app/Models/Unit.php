@@ -4,6 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProductType extends Model
+class Unit extends Model
 {
 }

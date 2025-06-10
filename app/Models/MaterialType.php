@@ -6,8 +6,4 @@ use Illuminate\Database\Eloquent\Model;
 
 class MaterialType extends Model
 {
-//    protected $fillable = [
-//        'name',
-//        'marriage',
-//    ];
 }
